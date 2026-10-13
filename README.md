@@ -1,5 +1,7 @@
 # Granola landing — учебный клон
 
+**Демо:** https://sashaanuk.github.io/granola-landing-clone/
+
 Учебная копия лендинга [granola.ai](https://www.granola.ai/) на чистом HTML/CSS/JS, без фреймворков и сборщика.
 С Granola проект не связан. Логотипы компаний заменены текстом, фотографии заменены градиентами.
 
