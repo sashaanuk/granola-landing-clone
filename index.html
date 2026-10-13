@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Granola — The AI notepad for back-to-back meetings (study clone)</title>
+    <meta name="description" content="Educational recreation of the granola.ai landing page." />
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;450;500;600&family=JetBrains+Mono:wght@400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap"
+    />
+
+    <!-- Order matters: tokens → base → components → sections -->
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/sections.css" />
+    <script src="js/main.js" defer></script>
+  </head>
+
+  <body>
+    <!-- ============ Announcement ============ -->
+    <div class="banner">
+      <span>New: Granola for Apple Watch</span>
+      <a href="#">Learn more →</a>
+    </div>
+
+    <!-- ============ Navbar ============ -->
+    <header class="navbar" id="navbar">
+      <div class="container">
+        <div class="navbar__pill">
+          <a href="#" class="logo" aria-label="Granola home">
+            <svg viewBox="0 0 32 32" aria-hidden="true">
+              <rect width="32" height="32" rx="8" fill="#5b6f00" />
+              <path d="M9 12h14M9 16h10M9 20h12" stroke="#d1e043" stroke-width="2.4" stroke-linecap="round" />
+            </svg>
+            Granola
+          </a>
+
+          <nav class="nav" aria-label="Main">
+            <div class="nav__item" data-dropdown>
+              <button class="nav__link" aria-expanded="false" aria-haspopup="true">
+                Features
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m4 6 4 4 4-4" /></svg>
+              </button>
+              <div class="dropdown" role="menu">
+                <a class="dropdown__item" href="#notepad" role="menuitem">
+                  <span class="dropdown__icon" style="background: var(--oats-green-100)">✎</span>
+                  <span>
+                    <span class="dropdown__title">Notepad</span><br />
+                    <span class="dropdown__desc">Your notes, enhanced by AI</span>
+                  </span>
+                </a>
+                <a class="dropdown__item" href="#chat" role="menuitem">
+                  <span class="dropdown__icon" style="background: var(--oats-blue-100)">◎</span>
+                  <span>
+                    <span class="dropdown__title">Chat</span><br />
+                    <span class="dropdown__desc">Ask anything across your meetings</span>
+                  </span>
+                </a>
+                <a class="dropdown__item" href="#everywhere" role="menuitem">
+                  <span class="dropdown__icon" style="background: var(--oats-purple-100)">▯</span>
+                  <span>
+                    <span class="dropdown__title">Granola for mobile</span><br />
+                    <span class="dropdown__desc">For in-person meetings on the go</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <a class="nav__link" href="#">Enterprise</a>
+            <a class="nav__link" href="#pricing">Pricing</a>
+            <a class="nav__link" href="#">Blog</a>
+            <a class="nav__link" href="#">Careers</a>
+          </nav>
+
+          <div class="navbar__actions">
+            <a class="btn btn--soft" href="#">Talk to sales</a>
+            <a class="icon-btn" href="#" aria-label="Download">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                <path d="M10 3v10m0 0-4-4m4 4 4-4M4 16h12" />
+              </svg>
+            </a>
+            <button class="icon-btn burger" aria-label="Open menu" aria-expanded="false" data-burger>
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                <path d="M3 6h14M3 14h14" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="mobile-menu">
+          <a href="#notepad">Notepad</a>
+          <a href="#chat">Chat</a>
+          <a href="#everywhere">Mobile</a>
+          <a href="#">Enterprise</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#">Blog</a>
+          <a class="btn btn--accent btn--lg" href="#">Download for free</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- ============ Hero ============ -->
+      <section class="hero">
+        <div class="container hero__grid">
+          <div class="hero__copy">
+            <h1 class="display hero__title">The AI notepad for back-to-back meetings</h1>
+            <div class="lead hero__lead">
+              <p>Notes, actions and memory.</p>
+              <p>Without a meeting bot.</p>
+            </div>
+            <div class="hero__cta">
+              <a class="btn btn--accent btn--lg" href="#">
+                Download for free
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M10 4v9m0 0-3.5-3.5M10 13l3.5-3.5" /></svg>
+              </a>
+              <p class="hero__platforms">Available for macOS, Windows, iOS, Android</p>
+            </div>
+          </div>
+
+          <!-- Collage of tinted "photo" tiles: stand-ins for the original imagery strip -->
+          <div class="hero__art" aria-hidden="true">
+            <div class="tile tile--a"></div>
+            <div class="tile tile--b"></div>
+            <div class="tile tile--c"></div>
+            <div class="tile tile--d"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Effortless notes (product mockup) ============ -->
+      <section class="section effortless" id="notepad">
+        <div class="container">
+          <div class="effortless__head reveal">
+            <h2 class="h2">Effortless notes,<br /><span class="mark">enhanced instantly.</span></h2>
+            <ul class="ticks">
+              <li>Uses your computer audio, so doesn't invite a bot</li>
+              <li>Private by default, easy to share if you choose</li>
+              <li>Works with Zoom, Google Meet, Teams and every other meeting app.</li>
+            </ul>
+          </div>
+
+          <div class="window notepad reveal" data-notepad>
+            <div class="window__bar">
+              <div class="window__dots"><span></span><span></span><span></span></div>
+              <div class="segmented" role="tablist">
+                <button role="tab" aria-selected="true" data-tab="mine">My notes</button>
+                <button role="tab" aria-selected="false" data-tab="enhanced">Enhanced</button>
+              </div>
+            </div>
+
+            <div class="window__body">
+              <p class="notepad__meta">Today · 10:00 · <span class="avatar-stack"><i></i><i></i><i></i></span> 4 people</p>
+              <h3 class="notepad__title">Q3 GTM sync</h3>
+
+              <!-- Raw notes a person typed -->
+              <div class="notepad__pane" data-pane="mine">
+                <ul class="notes notes--raw">
+                  <li>launch moved → sep 18?</li>
+                  <li>pricing page needs new tiers</li>
+                  <li>sam: enterprise pipeline looks strong</li>
+                  <li>blog post + webinar</li>
+                </ul>
+              </div>
+
+              <!-- Same notes after AI "enhancement" -->
+              <div class="notepad__pane" data-pane="enhanced" hidden>
+                <h4 class="notes__h">Launch timeline</h4>
+                <ul class="notes">
+                  <li><span class="ink">Launch moved to Sep 18</span> to align with the partner announcement</li>
+                  <li>Engineering confirmed feature freeze on Sep 4</li>
+                </ul>
+                <h4 class="notes__h">Pricing</h4>
+                <ul class="notes">
+                  <li><span class="ink">Pricing page needs new tiers</span> before launch — Maya to draft by Friday</li>
+                </ul>
+                <h4 class="notes__h">Pipeline</h4>
+                <ul class="notes">
+                  <li><span class="ink">Sam: enterprise pipeline looks strong</span>, 3 deals expected to close in Q3</li>
+                </ul>
+              </div>
+
+              <div class="notepad__footer">
+                <div class="recorder">
+                  <span class="bars"><span></span><span></span><span></span><span></span></span>
+                  <span class="muted">Transcribing</span>
+                  <button class="btn btn--primary" data-generate>✦ Generate notes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Logos ============ -->
+      <section class="section logos">
+        <div class="container">
+          <p class="eyebrow">For the doers</p>
+          <h2 class="h2 logos__title">Trusted by teams we admire</h2>
+          <!-- Wordmarks in text instead of real logo files -->
+          <ul class="logos__grid">
+            <li>PostHog</li>
+            <li>Intercom</li>
+            <li>Figma</li>
+            <li>Brex</li>
+            <li>Ramp</li>
+            <li>Replit</li>
+            <li>Lovable</li>
+            <li>Cursor</li>
+            <li>Bumble</li>
+            <li>Asana</li>
+            <li>Vanta</li>
+            <li>Linear</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============ Before / During / After ============ -->
+      <section class="section journey">
+        <div class="container">
+          <h2 class="h2 journey__title reveal">Granola helps you before, during and after your meetings.</h2>
+
+          <!-- Before -->
+          <article class="step reveal">
+            <div class="step__copy">
+              <p class="eyebrow">Before the meeting</p>
+              <h3 class="h3">Start your meeting prepared</h3>
+              <p class="lead">
+                Granola syncs with your calendar and preps a Brief before every external meeting: who's attending,
+                what you discussed last time, and what matters now.
+              </p>
+            </div>
+            <div class="step__visual step__visual--blue">
+              <div class="brief">
+                <p class="brief__label">✦ Your Brief</p>
+                <p class="brief__who"><b>Jordan Lee</b> · VP Finance at Northwind</p>
+                <ul class="brief__list">
+                  <li>Last call: pushed back on per-seat pricing for 200+ users</li>
+                  <li>Asked for a security review before procurement</li>
+                  <li><span class="ink">What matters now:</span> come with a volume tier and the SOC 2 report</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- During -->
+          <article class="step step--flip reveal">
+            <div class="step__copy">
+              <p class="eyebrow">In the meeting</p>
+              <h3 class="h3">Give your full attention</h3>
+              <p class="lead">
+                Don't choose between listening and taking good notes. Write down as much or as little as you like —
+                Granola uses meeting context to write clear notes, personal to you.
+              </p>
+            </div>
+            <div class="step__visual step__visual--green">
+              <div class="typing-note">
+                <p class="typing-note__title">Design review</p>
+                <p class="typing-note__line" data-typewriter="new onboarding flow — fewer steps, ship behind flag"></p>
+                <span class="caret"></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- After -->
+          <article class="step reveal">
+            <div class="step__copy">
+              <p class="eyebrow">After the meeting</p>
+              <h3 class="h3">Post-meeting admin, done</h3>
+              <p class="lead">
+                Notes, action items, and follow-ups are ready the moment the meeting ends, so you can move things
+                forward.
+              </p>
+            </div>
+            <div class="step__visual step__visual--yellow">
+              <div class="actions">
+                <button class="chip">☑ List actions</button>
+                <button class="chip">✉ Write follow-up email</button>
+                <button class="chip">▤ Draft project plan</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ Chat ============ -->
+      <section class="section chat" id="chat">
+        <div class="container chat__inner reveal">
+          <p class="eyebrow chat__eyebrow">Granola Chat</p>
+          <h2 class="h2">Perfect meeting memory</h2>
+
+          <div class="chat__box">
+            <div class="chat__answer" data-chat-answer hidden>
+              <p class="muted chat__source">Searched 14 meetings from this week</p>
+              <ul>
+                <li>Send Jordan the SOC 2 report <span class="tag">Tue · Northwind</span></li>
+                <li>Share revised Q3 launch plan with the team <span class="tag">Wed · GTM sync</span></li>
+                <li>Intro Maya to the design agency <span class="tag">Thu · 1:1</span></li>
+              </ul>
+            </div>
+            <form class="chat__input" data-chat>
+              <input
+                type="text"
+                aria-label="Ask Granola"
+                value="What did I promise to do in my meetings this week?"
+              />
+              <button class="icon-btn" aria-label="Send">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M10 16V4m0 0-5 5m5-5 5 5" /></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Testimonials ============ -->
+      <section class="section testimonials">
+        <div class="container">
+          <h2 class="h2 testimonials__title reveal">Helping busy people through busy days</h2>
+        </div>
+        <div class="marquee" style="--marquee-duration: 60s; --marquee-gap: 1.25rem">
+          <div class="marquee__track" data-marquee>
+            <figure class="quote">
+              <blockquote>"Granola was one of those things that just clicked instantly. It's seamless and very purpose-built."</blockquote>
+              <figcaption><b>Karri Saarinen</b><span>CEO, Linear</span></figcaption>
+            </figure>
+            <figure class="quote quote--green">
+              <blockquote>"It's the easiest AI notetaker to start using 'out of the box,' and it gets better with more meetings"</blockquote>
+              <figcaption><b>Olivia Moore</b><span>Partner, Andreessen Horowitz</span></figcaption>
+            </figure>
+            <figure class="quote">
+              <blockquote>"It's actually unbelievable how good Granola is."</blockquote>
+              <figcaption><b>Guillermo Rauch</b><span>CEO, Vercel</span></figcaption>
+            </figure>
+            <figure class="quote quote--blue">
+              <blockquote>"If you are in a lot of meetings, this is a gamechanger."</blockquote>
+              <figcaption><b>Deedy Das</b><span>Partner, Menlo Ventures</span></figcaption>
+            </figure>
+            <figure class="quote">
+              <blockquote>"Granola generates the best meeting notes of anything I've tried so far."</blockquote>
+              <figcaption><b>Nat Friedman</b><span>Investor</span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Works everywhere (bento grid) ============ -->
+      <section class="section everywhere" id="everywhere">
+        <div class="container">
+          <h2 class="h2 everywhere__title reveal">Works everywhere you do,<br />how you do</h2>
+
+          <div class="bento">
+            <article class="card bento__item bento__item--wide reveal">
+              <h3 class="bento__h">Humans in the room, not bots</h3>
+              <p class="muted">Granola doesn't join your meeting. Instead, it transcribes in the background while you stay present</p>
+              <div class="call" aria-hidden="true">
+                <div class="call__face" style="--c: var(--oats-pink-100)">AK</div>
+                <div class="call__face" style="--c: var(--oats-blue-100)">JL</div>
+                <div class="call__face" style="--c: var(--oats-yellow-100)">MS</div>
+                <div class="call__face call__face--empty">No bot here 👋</div>
+              </div>
+            </article>
+
+            <article class="card bento__item reveal">
+              <h3 class="bento__h">Works with all meeting apps</h3>
+              <p class="muted">Zoom, Meet, Teams, Huddles, in-person, on-the-go.</p>
+              <div class="apps" aria-hidden="true">
+                <span style="--c: #2d8cff">Zoom</span>
+                <span style="--c: #00a862">Meet</span>
+                <span style="--c: #5059c9">Teams</span>
+              </div>
+            </article>
+
+            <article class="card bento__item reveal">
+              <h3 class="bento__h">Private by default, ready to share</h3>
+              <p class="muted">Your notes are just for you. Search them, polish them, analyze them, then send them as you like.</p>
+              <div class="share" aria-hidden="true">
+                <span class="share__lock">🔒 Only you</span>
+                <span class="btn btn--primary">Share</span>
+              </div>
+            </article>
+
+            <article class="card bento__item reveal">
+              <h3 class="bento__h">Made for in-person meetings too</h3>
+              <p class="muted">Mobile app for iPhone and Android.</p>
+              <div class="phones" aria-hidden="true">
+                <div class="phone"><span class="bars"><span></span><span></span><span></span><span></span></span><p>Coffee with Alex</p></div>
+                <div class="phone phone--back"></div>
+              </div>
+            </article>
+
+            <article class="card bento__item reveal">
+              <h3 class="bento__h">Syncs with your calendar</h3>
+              <p class="muted">Automatic detection of upcoming meetings.</p>
+              <div class="notif" aria-hidden="true">
+                <span class="notif__icon"></span>
+                <div>
+                  <b>Weekly design review</b>
+                  <p>Starting now · Click to take notes</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ MCP connectors ============ -->
+      <section class="section mcp">
+        <div class="container mcp__inner reveal">
+          <h2 class="h2">Use your meeting notes anywhere</h2>
+          <p class="lead">No more copy-pasting meeting transcripts into AI tools.</p>
+          <p class="muted mcp__body">
+            Connect Granola in a few clicks and your AI apps become aware of your meeting notes. So you can power what
+            you're working on with what you talked about.
+          </p>
+        </div>
+        <div class="marquee mcp__marquee" style="--marquee-duration: 35s">
+          <ul class="marquee__track" data-marquee>
+            <li class="connector">Bolt</li>
+            <li class="connector">Figma</li>
+            <li class="connector">Manus</li>
+            <li class="connector">Replit</li>
+            <li class="connector">OpenAI</li>
+            <li class="connector">Claude</li>
+            <li class="connector">Cursor</li>
+            <li class="connector">Lovable</li>
+            <li class="connector">Tasklet</li>
+            <li class="connector">v0</li>
+            <li class="connector">Duckbill</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============ Pricing CTA ============ -->
+      <section class="section pricing" id="pricing">
+        <div class="container">
+          <div class="pricing__card reveal">
+            <h2 class="display pricing__title">Unlimited meeting notes for free</h2>
+            <p class="lead">
+              Take as many notes as you'd like. Upgrade to view and work with notes older than 30 days.
+            </p>
+            <div class="pricing__cta">
+              <a class="btn btn--accent btn--lg" href="#">Download for free</a>
+              <a class="btn btn--soft btn--lg" href="#">View pricing</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ Footer ============ -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <a href="#" class="logo footer__logo" aria-label="Granola home">
+            <svg viewBox="0 0 32 32" aria-hidden="true">
+              <rect width="32" height="32" rx="8" fill="#5b6f00" />
+              <path d="M9 12h14M9 16h10M9 20h12" stroke="#d1e043" stroke-width="2.4" stroke-linecap="round" />
+            </svg>
+            Granola
+          </a>
+
+          <div>
+            <h4 class="footer__h">Features</h4>
+            <ul><li><a href="#">Notepad</a></li><li><a href="#">Chat</a></li><li><a href="#">Mobile</a></li></ul>
+          </div>
+          <div>
+            <h4 class="footer__h">Product</h4>
+            <ul>
+              <li><a href="#">Pricing</a></li><li><a href="#">Enterprise</a></li><li><a href="#">Integrations</a></li>
+              <li><a href="#">AI notepad vs notetaker</a></li><li><a href="#">AI meeting assistant</a></li>
+              <li><a href="#">For sales</a></li><li><a href="#">For product management</a></li><li><a href="#">MCP</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer__h">Company</h4>
+            <ul>
+              <li><a href="#">Customers</a></li><li><a href="#">Careers</a></li><li><a href="#">Press</a></li>
+              <li><a href="#">Events</a></li><li><a href="#">Startup program</a></li><li><a href="#">Student program</a></li>
+              <li><a href="#">Nonprofit program</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer__h">Resources</h4>
+            <ul>
+              <li><a href="#">Blog</a></li><li><a href="#">Security</a></li><li><a href="#">Help Center</a></li>
+              <li><a href="#">Status</a></li><li><a href="#">Contact us</a></li><li><a href="#">Terms</a></li>
+              <li><a href="#">Privacy</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p>© Granola, Inc. 2026 · Educational clone, not affiliated</p>
+          <p>Made with ♥ in Shoreditch</p>
+          <ul class="footer__social">
+            <li><a href="#">LinkedIn</a></li><li><a href="#">Twitter</a></li><li><a href="#">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

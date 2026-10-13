@@ -1,0 +1,452 @@
+/* ==========================================================================
+   Components: reusable pieces used across sections
+   ========================================================================== */
+
+/* ---- Buttons ----------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 2.5rem;
+  padding-inline: 1.125rem;
+  border-radius: var(--radius-full);
+  font-size: var(--text-base);
+  font-weight: 450;
+  white-space: nowrap;
+  user-select: none;
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    transform 0.2s var(--ease-out);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn--accent {
+  background: var(--fill-accent);
+  color: var(--ink-inverse);
+}
+.btn--accent:hover {
+  background: var(--fill-accent-hover);
+}
+
+.btn--primary {
+  background: var(--fill-primary);
+  color: var(--ink-inverse);
+}
+.btn--primary:hover {
+  background: var(--fill-primary-hover);
+}
+
+.btn--soft {
+  background: var(--fill-soft);
+}
+.btn--soft:hover {
+  background: var(--fill-soft-hover);
+}
+
+.btn--lg {
+  height: 3.5rem;
+  padding-inline: 1.75rem;
+}
+
+.btn svg {
+  width: 1.1em;
+  height: 1.1em;
+}
+
+/* ---- Announcement banner ----------------------------------------------- */
+
+.banner {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.6rem var(--gutter);
+  font-size: var(--text-sm);
+  background: var(--oats-green-200);
+  color: var(--oats-green-600);
+}
+
+.banner a {
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---- Navbar ------------------------------------------------------------ */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding-top: 0.5rem;
+}
+
+/* The "pill": transparent strip at the top, rounded floating bar on scroll */
+.navbar__pill {
+  display: flex;
+  align-items: center;
+  height: 3.5rem;
+  padding-inline: 0.5rem;
+  margin-inline: -0.5rem;
+  border: 0.5px solid transparent;
+  border-radius: var(--radius-full);
+  transition:
+    background-color 0.3s ease-out,
+    border-color 0.3s ease-out,
+    box-shadow 0.3s ease-out;
+}
+
+.navbar.is-scrolled .navbar__pill {
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter: blur(12px);
+  border-color: var(--stroke);
+  box-shadow: var(--shadow-sm);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: 1rem;
+  padding-left: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  letter-spacing: -0.02em;
+}
+
+.logo svg {
+  width: 26px;
+  height: 26px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+}
+
+.nav__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.01em;
+  transition: background-color 0.2s;
+}
+
+.nav__link:hover,
+.nav__item.is-open > .nav__link {
+  background: var(--oats-neutral-100);
+}
+
+.nav__link svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s;
+}
+
+.nav__item {
+  position: relative;
+}
+
+.nav__item.is-open .nav__link svg {
+  transform: rotate(180deg);
+}
+
+/* Features dropdown */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 1rem);
+  left: -1rem;
+  width: 22rem;
+  padding: 0.5rem;
+  background: var(--surface);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition:
+    opacity 0.2s,
+    transform 0.2s var(--ease-out);
+}
+
+.nav__item.is-open .dropdown {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.dropdown__item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.625rem 0.75rem;
+  border-radius: var(--radius-md);
+  transition: background-color 0.15s;
+}
+
+.dropdown__item:hover {
+  background: var(--oats-neutral-100);
+}
+
+.dropdown__icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  font-size: 1.25rem;
+}
+
+.dropdown__title {
+  font-weight: 500;
+}
+
+.dropdown__desc {
+  font-size: var(--text-sm);
+  color: var(--ink-secondary);
+}
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon-btn {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-full);
+  background: var(--fill-primary);
+  color: var(--ink-inverse);
+  transition: background-color 0.2s;
+}
+
+.icon-btn:hover {
+  background: var(--fill-primary-hover);
+}
+
+.icon-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.burger {
+  display: none;
+  background: var(--fill-soft);
+  color: var(--ink-primary);
+}
+
+.burger:hover {
+  background: var(--fill-soft-hover);
+}
+
+/* Mobile menu */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  background: var(--surface);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.mobile-menu a {
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  font-size: var(--text-lg);
+}
+
+.mobile-menu a:hover {
+  background: var(--oats-neutral-100);
+}
+
+.navbar.is-menu-open .mobile-menu {
+  display: flex;
+}
+
+@media (max-width: 860px) {
+  .nav,
+  .navbar__actions .btn {
+    display: none;
+  }
+  .navbar__pill {
+    justify-content: space-between;
+  }
+  .burger {
+    display: grid;
+  }
+}
+
+/* ---- App window mockup ------------------------------------------------- */
+
+.window {
+  background: var(--surface);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.window__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--stroke-soft);
+}
+
+.window__dots {
+  display: flex;
+  gap: 6px;
+}
+
+.window__dots span {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--oats-neutral-200);
+}
+
+.window__body {
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+/* Segmented control: "My notes / Enhanced" */
+.segmented {
+  display: inline-flex;
+  padding: 3px;
+  border-radius: var(--radius-full);
+  background: var(--surface-sunken);
+  font-size: var(--text-sm);
+}
+
+.segmented button {
+  padding: 0.3rem 0.9rem;
+  border-radius: var(--radius-full);
+  color: var(--ink-secondary);
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    box-shadow 0.2s;
+}
+
+.segmented button[aria-selected="true"] {
+  background: var(--surface);
+  color: var(--ink-primary);
+  box-shadow: var(--shadow-xs);
+}
+
+/* Pill-shaped bottom toolbar ("Transcribing…  Generate notes") */
+.recorder {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.375rem 0.375rem 0.375rem 1rem;
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-full);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  font-size: var(--text-sm);
+}
+
+/* Animated audio bars */
+.bars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 14px;
+}
+
+.bars span {
+  width: 3px;
+  border-radius: 2px;
+  background: var(--oats-green-400);
+  animation: bar 1s ease-in-out infinite;
+}
+
+.bars span:nth-child(2) { animation-delay: -0.2s; }
+.bars span:nth-child(3) { animation-delay: -0.4s; }
+.bars span:nth-child(4) { animation-delay: -0.6s; }
+
+@keyframes bar {
+  0%, 100% { height: 4px; }
+  50% { height: 14px; }
+}
+
+/* ---- Chips ------------------------------------------------------------- */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-full);
+  background: var(--surface);
+  font-size: var(--text-sm);
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
+}
+
+.chip:hover {
+  background: var(--surface-tint-accent);
+  border-color: var(--oats-green-300);
+}
+
+/* ---- Card -------------------------------------------------------------- */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--stroke-soft);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.5rem, 3vw, 2rem);
+}
+
+/* ---- Marquee (infinite horizontal scroll) ------------------------------ */
+/* Content is duplicated in HTML; the track moves by -50% and loops seamlessly. */
+
+.marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+
+.marquee__track {
+  display: flex;
+  gap: var(--marquee-gap, 1rem);
+  width: max-content;
+  animation: marquee var(--marquee-duration, 40s) linear infinite;
+}
+
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(calc(-50% - var(--marquee-gap, 1rem) / 2));
+  }
+}
+
+/* ---- Highlighter mark (lime underline used in headings) ---------------- */
+
+.mark {
+  background: linear-gradient(transparent 58%, var(--fill-highlight) 58%);
+  padding-inline: 0.05em;
+}
